@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卓沅2024「专属记忆」巡演</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <style>
+
+        #time {
+            background-color: rgb(255, 255, 255); /* 半透明黑色背景 */
+            color: rgb(0, 0, 0);
+            font-weight: 600;
+            font-family: "SimSun","宋体","新宋体",serif;
+            text-align: center;
+            padding: 4px 0;/*元素内容和边框之间的上下间距和左右间距*/
+            font-size: 14px; /*字体大小*/
+            display: flex; /* 使用Flexbox布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        #time .prefix {
+            margin-right: 25px; /* 前缀文字与时间之间的间距 */
+            font-weight: bold; /* 文字加粗 */
+            color: rgb(206, 96, 41); /* 文字颜色 */
+            font-size: 14px; /* 文字大小 */
+        }
+
+        /* .barcode-text {
+            fill: rgb(0, 0, 0); /* 文本颜色 
+            font-family: "Times New Roman", Times, serif; /* 字体家族 
+            letter-spacing: 3px; /* 文字间距 
+            font-size: 8px; /* 文本字体大小 
+            font-weight: bold; /* 文本字体粗细 
+        } */
+
+        body {
+            font-family: "SimSun","宋体","新宋体",serif;
+            text-align: center;
+            margin: 0; /* 清除默认外边距 */
+            padding: 0; /* 清除默认内边距 */
+        }
+
+        /* 标签分别是line-height行高，font-size字体大小，margin-bottom元素底部外边距，font-weight字体粗细程度 */
+
+        h1 {
+            font-size: 1.6rem; 
+            margin-bottom: 0.1rem;
+            font-weight: 700;
+            line-height: 0.6;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.1rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-family: "SimHei", "黑体", sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.1rem;
+            font-weight: 900;
+            line-height: 0.6;
+            letter-spacing: -0.5px;
+            transform: scaleX(0.6) scaleY(1.4); /* 调整宽度和高度 */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 0.1 rem;
+            font-weight: 600;
+            line-height: 0.6;
+        }
+
+        .entry-group {
+            display: inline-block;
+            color: white;
+            background-color: #55b155; /* 绿色 */
+            padding: 0.1rem 0.5rem;
+            border-radius: 0;
+            margin-bottom: 0.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .english-text {
+            font-family: "Times New Roman", Times, serif; /* 使用新罗马字体 */
+            margin-right: -0.2em; /* 调整间距 */
+        }
+
+        .chinese-text {font-family: "SimSun", "宋体", "新宋体", serif;}
+        .large-text {
+            font-size: 3.4rem; /* 你可以根据需要调整这个值 */
+        }
+
+        .spacing {margin-bottom: 0.5rem; }
+        /* 较大行间距 */
+        .extra-spacing {margin-bottom: 1.2rem; }
+
+        /* 更大行间距 */
+        .extra-large-spacing {margin-bottom: 2rem; }
+
+        /* 最大行间距 */
+        .max-spacing {margin-bottom: 3rem; }
+
+        .min-spacing {margin-bottom: -22px;}
+        
+        .highlight {
+            color: #FF0000; 
+            font-size: 1.3rem;
+        }
+
+        .highlight2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        @media screen and (min-width: 600px) {
+            h1 {font-size: 2.3rem;}
+            h2 {font-size: 1.4rem;}
+            h3 {font-size: 1.4rem;}
+            p {font-size: 1.4rem;}
+        }
+
+        @media screen and (min-width: 800px) {
+            h1 {font-size: 2.9rem;}
+            h2 {font-size: 1.7em;}
+            h3 {font-size: 1.7rem;}
+            p {font-size: 1.6rem;}
+        }
+    </style>
+</head>
+<body style="margin-top: 50px;">
+    <h1>卓沅2024「专属记忆」巡演</h1>
+    <h1 class="max-spacing">9月20日 (周五) 成都站</h1>
+
+    <h2 class="extra-spacing">入场分组</h2>
+    <div class="entry-group large-text">
+        <span class="english-text">VIP B</span>
+        <span class="chinese-text">组</span>
+    </div>
+    <p class="extra-large-spacing">现场请根据指示牌有序排队</p>
+    <p>预计入场时间</p>
+    <p>17:40</p>
+    <p>（仅供参考）</p>
+    <p class="highlight">具体检票入场时间</p>
+    <p class="highlight">可能提前或延后</p>
+    <p class="highlight extra-large-spacing">请依现场实际执行为准！</p>
+    
+    <p class="highlight2 extra-large-spacing">票种: VIP</p>
+    <p class="highlight2">姓名: 田雨佳</p>
+
+    <div class="min-spacing">
+        <svg id="barcode"></svg>
+    </div>
+
+    <h3 class="spacing"> 172681313189923 </h3>
+    <!-- 时间显示 -->
+    <div id="time">
+        <span class="prefix">截图无效</span>
+        <span id="clock"></span>
+    </div>
+
+    <!-- JavaScript代码 -->
+    <script>
+        function showTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // 初始调用一次
+        showTime();
+        
+        // 每秒更新时间
+        setInterval(showTime, 1000);
+        
+        // 确保文档完全加载后再执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 生成条形码
+            JsBarcode("#barcode", "172681313189923", {
+                format: "CODE128",  // 指定条形码格式
+                lineColor: "#000",  // 条形码线条颜色
+                width: 0.9,           // 条形码宽度
+                height: 90,         // 条形码高度
+                displayValue: false, // 显示条形码下方的文本
+                // text: {             // 自定义文本样式
+                //     fontSize: 12,   // 文本字体大小
+                //     margin: 5,      // 文本与条形码之间的间距
+                //     fontOptions: "bold", // 文本字体粗细
+                //     textAlign: "center"  // 文本对齐方式
+                // }
+            });
+            // 生成条形码后，为条形码下方的文本添加类名
+            // const barcodeText = document.querySelector('#barcode text');
+            // if (barcodeText) {
+            //     // barcodeText.classList.add('barcode-text');
+            //     barcodeText.textContent = '172681313189923';
+            // }
+        });
+    </script>
+
+</body>
+</html>
